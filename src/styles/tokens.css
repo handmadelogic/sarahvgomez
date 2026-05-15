@@ -1,0 +1,65 @@
+/* ============================================================
+   Raw tokens — used by Motion, GSAP, and any non-Tailwind code
+   ============================================================ */
+:root {
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-expo: cubic-bezier(0.7, 0, 0.84, 0);
+
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 600ms;
+  --duration-lazy: 1000ms;
+}
+
+/* ============================================================
+   Tailwind v4 design system — generates all utility classes
+   ============================================================ */
+@theme {
+  /* --- Colors ------------------------------------------------ */
+  --color-base: #f7f3ee;
+  --color-surface: #efe9e2;
+  --color-ink: #1c1714;
+  --color-ink-muted: #6b5c52;
+  --color-ink-faint: #c4b8b0;
+  --color-accent: #ff4f3b;
+  --color-accent-dark: #cc3a28;
+
+  /* Per-case-study accent palette */
+  --color-case-yellow: #ffd166;
+  --color-case-mint: #06d6a0;
+  --color-case-violet: #8338ec;
+
+  /* Semantic aliases */
+  --color-background: var(--color-base);
+  --color-foreground: var(--color-ink);
+
+  /* --- Typography -------------------------------------------- */
+  /* Font families — values come from next/font CSS variables    */
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-sans: var(--font-jakarta), system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Fira Code', monospace;
+
+  /* Fluid type scale via clamp(min, preferred, max) */
+  --text-xs: clamp(0.75rem, 0.72rem + 0.13vw, 0.813rem);
+  --text-sm: clamp(0.875rem, 0.84rem + 0.18vw, 0.938rem);
+  --text-base: clamp(1rem, 0.96rem + 0.2vw, 1.063rem);
+  --text-lg: clamp(1.125rem, 1.05rem + 0.38vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.438rem);
+  --text-2xl: clamp(1.5rem, 1.35rem + 0.75vw, 1.813rem);
+  --text-3xl: clamp(2rem, 1.75rem + 1.25vw, 2.5rem);
+  --text-4xl: clamp(2.5rem, 2.1rem + 2vw, 3.438rem);
+  --text-display: clamp(3.5rem, 2.5rem + 5vw, 8rem);
+
+  /* --- Spacing ---------------------------------------------- */
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  --spacing-128: 32rem;
+
+  /* --- Radii ------------------------------------------------- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+}
