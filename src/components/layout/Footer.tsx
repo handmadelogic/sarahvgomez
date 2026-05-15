@@ -33,7 +33,7 @@ export function Footer() {
         </nav>
 
         <p className="font-sans text-xs text-ink-faint">
-          © {new Date().getFullYear()} — Made with curiosity
+          © {new Date().getFullYear()} — Made with curiosity <span className="text-accent" aria-hidden>✦</span>
         </p>
 
       </Container>

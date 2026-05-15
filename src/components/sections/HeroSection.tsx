@@ -7,7 +7,6 @@ export function HeroSection() {
   return (
     <section id="hero" className="bg-dot-grid relative flex min-h-screen items-center overflow-hidden pt-24">
 
-      {/* Big decorative background initial */}
       <span
         aria-hidden
         className="pointer-events-none absolute right-[-0.05em] top-1/2 -translate-y-[52%] select-none font-display font-black leading-none text-ink/[0.06]"
@@ -27,10 +26,10 @@ export function HeroSection() {
           </FadeIn>
 
           <h1 className="font-display text-display leading-[0.95] tracking-tight text-ink">
-            <RevealText text="I make" delay={0.2} />
+            <RevealText text="I make" delay={0.2} splitBy="char" />
             <br />
             <span className="relative inline-block pb-5">
-              <RevealText text="things." delay={0.45} />
+              <RevealText text="things." delay={0.55} splitBy="char" />
               <svg
                 aria-hidden
                 className="absolute -bottom-1 left-0 w-full text-accent"
@@ -49,14 +48,14 @@ export function HeroSection() {
             </span>
           </h1>
 
-          <FadeIn delay={0.65}>
+          <FadeIn delay={0.9}>
             <p className="max-w-lg font-sans text-xl leading-relaxed text-ink-muted">
               Designer, maker, hobbyist. I bring the same curiosity to pixels
               as I do to woodworking and watercolour.
             </p>
           </FadeIn>
 
-          <FadeIn delay={0.8} className="flex flex-wrap items-center gap-6">
+          <FadeIn delay={1.05} className="flex flex-wrap items-center gap-6">
             <Button variant="primary" size="lg">
               <a href="#work">View work</a>
             </Button>
@@ -67,9 +66,8 @@ export function HeroSection() {
 
         </div>
 
-        {/* Floating margin annotation */}
         <FadeIn
-          delay={1.1}
+          delay={1.2}
           className="absolute bottom-12 right-0 hidden flex-col items-end gap-1 lg:flex"
         >
           <span className="font-sans text-xs uppercase tracking-widest text-ink-faint">Currently available</span>
@@ -77,6 +75,7 @@ export function HeroSection() {
         </FadeIn>
 
       </Container>
+
     </section>
   )
 }

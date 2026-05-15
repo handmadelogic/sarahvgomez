@@ -6,30 +6,62 @@ interface RevealTextProps {
   text: string
   className?: string
   delay?: number
-  as?: 'h1' | 'h2' | 'h3' | 'p' | 'span'
+  splitBy?: 'word' | 'char'
 }
 
-export function RevealText({ text, className, delay = 0, as: Tag = 'span' }: RevealTextProps) {
+export function RevealText({
+  text,
+  className,
+  delay = 0,
+  splitBy = 'word',
+}: RevealTextProps) {
   const reduced = useReducedMotion()
-
-  const words = text.split(' ')
 
   const container: Variants = {
     hidden: {},
     visible: {
-      transition: { staggerChildren: reduced ? 0 : 0.06, delayChildren: delay },
+      transition: {
+        staggerChildren: reduced ? 0 : splitBy === 'char' ? 0.03 : 0.06,
+        delayChildren: delay,
+      },
     },
   }
 
-  const word: Variants = {
-    hidden: { opacity: 0, y: reduced ? 0 : 32 },
+  const item: Variants = {
+    hidden: { opacity: 0, y: reduced ? 0 : splitBy === 'char' ? 40 : 32 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: reduced ? 0 : 0.5, ease: [0.16, 1, 0.3, 1] },
+      transition: {
+        duration: reduced ? 0 : splitBy === 'char' ? 0.4 : 0.5,
+        ease: [0.16, 1, 0.3, 1],
+      },
     },
   }
 
+  if (splitBy === 'char') {
+    const chars = text.split('')
+    return (
+      <motion.span
+        className={className}
+        variants={container}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        aria-label={text}
+      >
+        {chars.map((char, i) => (
+          <span key={i} className="inline-block overflow-hidden">
+            <motion.span variants={item} className="inline-block">
+              {char === ' ' ? ' ' : char}
+            </motion.span>
+          </span>
+        ))}
+      </motion.span>
+    )
+  }
+
+  const words = text.split(' ')
   return (
     <motion.span
       className={className}
@@ -41,9 +73,9 @@ export function RevealText({ text, className, delay = 0, as: Tag = 'span' }: Rev
     >
       {words.map((w, i) => (
         <span key={i} className="inline-block overflow-hidden">
-          <motion.span variants={word} className="inline-block">
+          <motion.span variants={item} className="inline-block">
             {w}
-            {i < words.length - 1 && ' '}
+            {i < words.length - 1 && ' '}
           </motion.span>
         </span>
       ))}
