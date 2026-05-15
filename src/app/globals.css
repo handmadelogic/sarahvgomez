@@ -95,6 +95,50 @@ p {
   background-size: 100% 36px;
 }
 
+/* ============================================================
+   Case study prose
+   ============================================================ */
+.prose-case h2 {
+  font-family: var(--font-display);
+  font-size: var(--text-3xl);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+  margin-top: 4rem;
+  margin-bottom: 1.25rem;
+}
+
+.prose-case h3 {
+  font-family: var(--font-display);
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: var(--color-ink);
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.prose-case p {
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  line-height: 1.8;
+  color: var(--color-ink-muted);
+  margin-bottom: 1.5rem;
+}
+
+.prose-case ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-ink-muted);
+  font-family: var(--font-sans);
+  font-size: var(--text-lg);
+  line-height: 1.8;
+}
+
+.prose-case li {
+  margin-bottom: 0.5rem;
+}
+
 /* Graph paper — engineering / sketch notebook */
 .bg-graph {
   background-color: var(--color-surface);
