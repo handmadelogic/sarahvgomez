@@ -1,5 +1,8 @@
 import type { Metadata } from 'next'
 import { Fraunces, Plus_Jakarta_Sans } from 'next/font/google'
+import { Nav } from '@/components/layout/Nav'
+import { Footer } from '@/components/layout/Footer'
+import { SmoothScroll } from '@/components/layout/SmoothScroll'
 import './globals.css'
 
 const fraunces = Fraunces({
@@ -30,7 +33,13 @@ export default function RootLayout({
       lang="en"
       className={`${fraunces.variable} ${jakarta.variable} h-full`}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <SmoothScroll>
+          <Nav />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </SmoothScroll>
+      </body>
     </html>
   )
 }

@@ -72,3 +72,34 @@ p {
   background-color: var(--color-accent);
   color: var(--color-base);
 }
+
+/* ============================================================
+   Journal textures
+   ============================================================ */
+
+/* Dot grid — references designer tools and sketch notebooks */
+.bg-dot-grid {
+  background-color: var(--color-base);
+  background-image: radial-gradient(circle, rgba(28,23,20,0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* Ruled lines — classic journal / lined paper */
+.bg-ruled {
+  background-color: var(--color-surface);
+  background-image: linear-gradient(
+    to bottom,
+    transparent calc(100% - 1px),
+    rgba(28,23,20,0.07) 100%
+  );
+  background-size: 100% 36px;
+}
+
+/* Graph paper — engineering / sketch notebook */
+.bg-graph {
+  background-color: var(--color-surface);
+  background-image:
+    linear-gradient(rgba(28,23,20,0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(28,23,20,0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
